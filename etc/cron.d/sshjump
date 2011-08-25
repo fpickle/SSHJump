@@ -1,0 +1,5 @@
+SSHJUMP_CONF=/etc/sshjump.conf
+
+# * * * * * root /usr/bin/sshjump-syncpwd
+* * * * * root /usr/bin/sshjump-process-logs.pl
+0 * * * * root /usr/bin/sshjump-close-old-sessions.pl

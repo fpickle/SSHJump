@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo -usshjump -i /usr/bin/sshjump-admin.pl

@@ -1,0 +1,29 @@
+#!/bin/bash
+ARGS=$@
+STRING=''
+TEMP=''
+
+for arg in $ARGS; do
+  if [[ $arg =~ ^- ]]; then
+    if [ "${TEMP}" != "" ]; then
+      STRING=${STRING}' "'$TEMP'"'
+      TEMP=''
+    fi
+
+    STRING=${STRING}' '$arg
+  else
+    if [ "${TEMP}" = "" ]; then
+      TEMP=$arg
+    else
+      TEMP=${TEMP}' '$arg
+    fi
+  fi
+done
+
+# Get final argument...
+if [ "${TEMP}" != "" ]; then
+  STRING=${STRING}' "'$TEMP'"'
+  TEMP=''
+fi
+
+sudo -usshjump -i /usr/bin/sshjump-menu.pl ${STRING}

@@ -1,0 +1,6 @@
+CREATE TABLE `sshkey` (
+	`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
+	`location` VARCHAR(128) NOT NULL DEFAULT '',
+	PRIMARY KEY (`id`),
+	UNIQUE KEY (`location`)
+) ENGINE=InnoDB;

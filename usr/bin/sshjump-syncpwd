@@ -1,0 +1,14 @@
+#!/bin/bash
+
+HTPASSWD=`grep HTPASSWD ${SSHJUMP_CONF} | awk '{print $3;}'`
+
+GROUP_LINE=`cat /etc/group | grep sshjump`
+GROUP_LIST=`echo "${GROUP_LINE}" | awk -F: '{printf "%s",$4}'`
+GROUP_ARRAY=( `echo "${GROUP_LIST}" | tr -s ',' ' '` )
+
+for USER in ${GROUP_ARRAY[@]}
+do
+  awk -F: /${USER}/' {printf "%s:%s\n",$1,$2}' /etc/shadow >> ${HTPASSWD}.bak
+done
+
+mv ${HTPASSWD}.bak ${HTPASSWD}

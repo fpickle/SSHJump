@@ -1,0 +1,28 @@
+The goals for the SSHJump product are:
+
+   *  Session Logging - Session Audits in cases of security intrusion
+   *  Simplification of user management
+
+Dependencies
+
+ dialog
+ ext
+ mysql-server
+ perl-Algorithm-C3
+ perl-Class-C3
+ perl-Class-MOP
+ perl-Config-General
+ perl-DBD-MySQL
+ perl-Data-OptList
+ perl-Devel-GlobalDestruction
+ perl-JSON
+ perl-List-MoreUtils
+ perl-MRO-Compat
+ perl-Moose
+ perl-Params-Util
+ perl-Sub-Exporter
+ perl-Sub-Install
+ perl-Sub-Name
+ perl-Task-Weaken
+ perl-Try-Tiny
+ scriptreplay
